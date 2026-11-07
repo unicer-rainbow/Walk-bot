@@ -1,12 +1,12 @@
 import asyncio
 import random
 import sqlite3
+import os
 from datetime import datetime, timedelta
 from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from aiogram.filters import Command
 
-import os
 TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 bot = Bot(token=TOKEN)
