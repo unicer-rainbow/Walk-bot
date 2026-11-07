@@ -217,7 +217,7 @@ async def start(msg: Message):
         "💰 /sell — продать всё\n"
         "🛒 /shop — магазин улучшений\n"
         "🏆 /top — лидерборд\n\n"
-        "Кулдаун прогулки: 30 сек."
+        "Кулдаун прогулки: 30 мин."
     )
     await msg.answer(text, parse_mode="HTML")
 
@@ -231,11 +231,11 @@ async def walk(msg: Message):
     if last_walk:
         last = datetime.fromisoformat(last_walk)
         if now - last < timedelta(minutes=30):
-    left = timedelta(minutes=30) - (now - last)
-    minutes = left.seconds // 60
-    seconds = left.seconds % 60
-    await msg.answer(f"⏳ Отдохни {minutes} мин. {seconds} сек.")
-    return
+            left = timedelta(minutes=30) - (now - last)
+            minutes = left.seconds // 60
+            seconds = left.seconds % 60
+            await msg.answer(f"⏳ Отдохни {minutes} мин. {seconds} сек.")
+            return
          
             
             
