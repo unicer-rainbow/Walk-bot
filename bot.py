@@ -230,10 +230,15 @@ async def walk(msg: Message):
     now = datetime.now()
     if last_walk:
         last = datetime.fromisoformat(last_walk)
-        if now - last < timedelta(seconds=30):
-            left = 30 - int((now - last).total_seconds())
-            await msg.answer(f"⏳ Отдохни {left} сек.")
-            return
+        if now - last < timedelta(minutes=30):
+    left = timedelta(minutes=30) - (now - last)
+    minutes = left.seconds // 60
+    seconds = left.seconds % 60
+    await msg.answer(f"⏳ Отдохни {minutes} мин. {seconds} сек.")
+    return
+         
+            
+            
 
     base = random.randint(1, 10)
     walked = base + lvl_dist
