@@ -7,7 +7,7 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from aiogram.filters import Command
 
-TOKEN = "9181799184:AAH4wru-BfbB2X2iVRr3zedonPPBtf8YBzA"
+TOKEN = "TELEGRAM_TOKEN"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
